@@ -1,0 +1,77 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_GirisEkrani(object):
+    def setupUi(self, GirisEkrani):
+        GirisEkrani.setObjectName("GirisEkrani")
+        GirisEkrani.setEnabled(True)
+        GirisEkrani.resize(360, 175)
+        GirisEkrani.setStyleSheet("background-color: rgb(54, 54, 54);")
+        self.label = QtWidgets.QLabel(GirisEkrani)
+        self.label.setGeometry(QtCore.QRect(20, 70, 77, 21))
+        font = QtGui.QFont()
+        font.setFamily("Century Gothic")
+        font.setPointSize(13)
+        self.label.setFont(font)
+        self.label.setStyleSheet("color:rgb(185, 185, 185);font-size:13pt")
+        self.label.setObjectName("label")
+        self.passwordTextBox = QtWidgets.QLineEdit(GirisEkrani)
+        self.passwordTextBox.setGeometry(QtCore.QRect(100, 70, 144, 21))
+        font = QtGui.QFont()
+        font.setFamily("Century Gothic")
+        font.setPointSize(12)
+        self.passwordTextBox.setFont(font)
+        self.passwordTextBox.setStyleSheet("background-color: rgb(195, 195, 195);")
+        self.passwordTextBox.setInputMask("")
+        self.passwordTextBox.setMaxLength(13)
+        self.passwordTextBox.setFrame(True)
+        self.passwordTextBox.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.passwordTextBox.setObjectName("passwordTextBox")
+        self.girisButton = QtWidgets.QPushButton(GirisEkrani)
+        self.girisButton.setGeometry(QtCore.QRect(270, 140, 75, 21))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.girisButton.sizePolicy().hasHeightForWidth())
+        self.girisButton.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Century Gothic")
+        font.setPointSize(12)
+        self.girisButton.setFont(font)
+        self.girisButton.setStyleSheet("background-color: rgb(0, 184, 0);\n"
+"alternate-background-color: rgb(0, 225, 0);")
+        self.girisButton.setObjectName("girisButton")
+        self.label_2 = QtWidgets.QLabel(GirisEkrani)
+        self.label_2.setEnabled(True)
+        self.label_2.setGeometry(QtCore.QRect(90, 20, 171, 31))
+        font = QtGui.QFont()
+        font.setFamily("Century Gothic")
+        font.setPointSize(14)
+        self.label_2.setFont(font)
+        self.label_2.setVisible(False)
+        self.label_2.setStatusTip("")
+        self.label_2.setStyleSheet("color:rgb(145, 0, 0)")
+        self.label_2.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.label_2.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.label_2.setObjectName("label_2")
+
+        self.retranslateUi(GirisEkrani)
+        QtCore.QMetaObject.connectSlotsByName(GirisEkrani)
+
+    def retranslateUi(self, GirisEkrani):
+        _translate = QtCore.QCoreApplication.translate
+        GirisEkrani.setWindowTitle(_translate("GirisEkrani", "Giriş Ekranı"))
+        GirisEkrani.setToolTip(_translate("GirisEkrani", "<html><head/><body><p><br/></p></body></html>"))
+        self.label.setText(_translate("GirisEkrani", "Ana Şifre:"))
+        self.girisButton.setText(_translate("GirisEkrani", "Giriş"))
+        self.label_2.setText(_translate("GirisEkrani", "Hatalı şifre girdiniz."))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    GirisEkrani = QtWidgets.QWidget()
+    ui = Ui_GirisEkrani()
+    ui.setupUi(GirisEkrani)
+    GirisEkrani.show()
+    sys.exit(app.exec_())
